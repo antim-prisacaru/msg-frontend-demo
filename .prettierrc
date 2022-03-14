@@ -1,0 +1,24 @@
+printWidth: 140
+tabWidth: 4
+arrowParens: 'avoid'
+useTabs: false
+bracketSpacing: true
+singleQuote: true
+jsxBracketSameLine: true
+htmlWhitespaceSensitivity: 'css'
+endOfLine: 'auto'
+overrides:
+  - files:
+      - 'client/**/*'
+      - '*.yml'
+      - '*.yaml'
+      - '*.html'
+      - '*.scss'
+    options:
+      tabWidth: 2
+  - files: '*.html'
+    options:
+      parser: 'html'
+  - files: '*.component.html'
+    options:
+      parser: 'angular'
