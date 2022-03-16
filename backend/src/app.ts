@@ -45,11 +45,15 @@ app.post('/login', (req: any, res: any) => {
         console.error('Username or password invalid');
         return res.status(401).send('Username or password invalid.');
     }
+
     currentUser = omit(result, ['password']);
+    console.log('Found user', currentUser);
+
     return res.status(200).send(currentUser);
 });
 
 app.get('/me', (req: any, res: any) => {
+    console.log('Getting user', currentUser);
     return res.status(200).send(omit(currentUser, ['password']));
 });
 
