@@ -9,14 +9,14 @@ export interface AuthState {
 }
 
 export const initialState: AuthState = {
-  user: undefined
+  user: undefined,
 };
 
 export const reducer = createReducer(
   initialState,
   on(AuthActions.loadUser, () => initialState),
   on(AuthActions.loadUserSuccess, (state: AuthState, { user }) => ({
-    user
+    user,
   })),
   on(AuthActions.logoutUserSuccess, () => initialState)
 );

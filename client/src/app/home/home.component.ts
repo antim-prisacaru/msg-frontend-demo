@@ -3,7 +3,7 @@ import User from '../shared/models/user.model';
 import { Store } from '@ngrx/store';
 import { State } from '../state';
 import { selectUser } from '../state/selectors/auth.selectors';
-import {logoutUser} from "../state/actions/auth.actions";
+import { logoutUser } from '../state/actions/auth.actions';
 
 @Component({
   selector: 'app-home',
@@ -17,9 +17,7 @@ import {logoutUser} from "../state/actions/auth.actions";
       <span class="font-semibold text-xl tracking-tight text-black">Welcome, {{ user?.firstName }}</span>
     </div>
     <div class="float-right">
-      <button class="bg-indigo-600 hover:bg-indigo-400 text-white font-bold py-2 px-4 rounded" (click)="logout()">
-        Logout
-      </button>
+      <button class="bg-indigo-600 hover:bg-indigo-400 text-white font-bold py-2 px-4 rounded" (click)="logout()">Logout</button>
     </div>
   </nav>`,
   changeDetection: ChangeDetectionStrategy.OnPush,

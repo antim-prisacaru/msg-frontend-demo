@@ -32,6 +32,7 @@ app.get('/', (req: any, res: any) => {
 });
 
 app.post('/login', (req: any, res: any) => {
+    console.log('/login route');
     const user = req.body;
 
     if (!(typeof user === 'object' && user.hasOwnProperty('username') && user.hasOwnProperty('password'))) {
@@ -53,11 +54,13 @@ app.post('/login', (req: any, res: any) => {
 });
 
 app.get('/me', (req: any, res: any) => {
+    console.log('/me route');
     console.log('Getting user', currentUser);
     return res.status(200).send(omit(currentUser, ['password']));
 });
 
 app.post('/logout', (req: any, res: any) => {
+    console.log('/logout route');
     if (!currentUser) {
         console.error('User not logged in!');
         return res.status(401).send('User not logged in!');
